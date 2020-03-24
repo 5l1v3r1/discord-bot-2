@@ -12,7 +12,7 @@ export default class extends Command {
   }
   async exec(message: Message, args: string[]) {
     const countriesWithRegion = ['cn', 'ca', 'us', 'au']
-    const res = await require('node-fetch')(`https://corona.lmao.ninja/jhucsse`);
+    const res = await require('node-fetch')(`https://corona.lmao.ninja/v2/jhucsse`);
     const data = await res.json();
     if (!args[0]) return message.channel.createMessage(`Please provide a country name. (cn, ca, us, au)`);
     if (!countriesWithRegion.includes(args[0])) return message.channel.createMessage(`That is not a country with region data. (cn, ca, us, au)`);
