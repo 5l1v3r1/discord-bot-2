@@ -12,7 +12,7 @@ export default class extends Command {
     });
   }
   async exec(message: Message, args: string[]) {
-    const res = await require('node-fetch')(`https://corona.lmao.ninja/historical`);
+    const res = await require('node-fetch')(`https://corona.lmao.ninja/v2/historical`);
     const data = await res.json();
     let found;
     if (!args[0]) return message.channel.createMessage('Please provide a country name');
